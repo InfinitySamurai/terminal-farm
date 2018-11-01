@@ -17,3 +17,5 @@ def wantsAString(thing: str):
 
 wantsAString("This is now actually a string")
 testFunction(p)
+
+print('hello world')
