@@ -6,6 +6,7 @@ name = "pypi"
 [packages]
 "flake8" = "*"
 "pep8" = "*"
+mypy = "*"
 
 [dev-packages]
 pylint = "*"
