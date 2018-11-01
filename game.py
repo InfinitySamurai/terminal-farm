@@ -15,5 +15,5 @@ def wantsAString(thing: str):
     print(thing)
 
 
-wantsAString(1)
-testFunction("not a plant")
+wantsAString("This is now actually a string")
+testFunction(p)
