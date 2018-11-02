@@ -7,6 +7,7 @@ name = "pypi"
 "flake8" = "*"
 "pep8" = "*"
 mypy = "*"
+bearlibterminal = "*"
 
 [dev-packages]
 pylint = "*"
