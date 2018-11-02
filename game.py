@@ -22,7 +22,7 @@ testFunction(p)
 print('hello world')
 
 terminal.open()
-terminal.print(1, 1, "Hello World")
+terminal.print(1, 1, "[font=gothic]Hello World[/font]")
 terminal.refresh()
 
 terminal.print(6, 6, "Test")
