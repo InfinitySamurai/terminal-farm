@@ -29,6 +29,10 @@ terminal.print(6, 6, "Test")
 terminal.refresh()
 terminal.composition(terminal.TK_ON)
 terminal.print(6, 6, "tseT")
+terminal.print(10, 10, "this is a long sentence")
+terminal.print(10, 10, "another thing with overlap")
+terminal.put(12, 12, 1)
+terminal.put(12, 13, 15)
 terminal.refresh()
 
 while terminal.read() != terminal.TK_CLOSE:
