@@ -35,6 +35,11 @@ terminal.put(12, 12, 1)
 terminal.put(12, 13, 15)
 terminal.refresh()
 
+terminal.bkcolor(terminal.color_from_argb(255, 132, 123, 554))
+terminal.color(terminal.color_from_name("green"))
+terminal.print(12, 14, "test")
+terminal.refresh()
+
 while terminal.read() != terminal.TK_CLOSE:
     pass
 
