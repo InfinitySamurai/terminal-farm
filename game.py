@@ -1,7 +1,7 @@
 from Plant import Plant
 from bearlibterminal import terminal
 
-p: Plant = Plant()
+p: Plant = Plant("Apple Tree", 10)
 print(p)
 p.water()
 print(p)

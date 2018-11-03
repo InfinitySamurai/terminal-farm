@@ -1,11 +1,11 @@
-#### Terminal Farm
+# Terminal Farm
 
 ## What is it?
 An ascii farming simulator created for the itch.io [Terminal Jam](https://itch.io/jam/terminal-jam)
 
 ## Installation
 
-# Linux
+### Linux
 * Add python 3.7 ppa repo `sudo add-apt-repository ppa:jonathonf/python-3.7 && sudo apt-get update`
 * Install python 3.7 `sudo apt-get install python3.7`
 * Add an alias for python 3.7 to your bashrc (if you want) `alias python=/usr/bin/python3.7`
@@ -18,18 +18,21 @@ An ascii farming simulator created for the itch.io [Terminal Jam](https://itch.i
     * Make sure you `source ~/.bashrc`
     * Alternativly you can add some folder to your path (~/.local  ?), I don't know how
 * Install dependencies with pipenv `pipenv install`
-* For once of running of the game use `pipenv run python game.py`
-* To run an interactive shell run `pipenv shell`
-    * To run the game from the shell use `python game.py`
  
 
-# Windows
+### Windows
 * Install python 3.7.1
 * Install pip (Hopefully already have it with python install)
 * get pipenv `pip install pipenv`
 * install dependencies with `pipenv install`
-* Start the shell environment with `pipenv shell`
-* Run the game with `python game.py`
+
+## Running
+
+* For once of running of the game use `pipenv run python game.py`
+* To run an interactive shell run `pipenv shell`
+    * **This appears to not work on Linux!:** I'm having issues with the path not appropriately 
+    being set when running the shell, therefore resulting in python not being able to find imports
+    * To run the game from the shell use `python game.py`
 
 
 ## Other important things
