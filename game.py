@@ -17,7 +17,9 @@ menu.displayOptions(10, 10)
 # menu.selectOption(1)
 # print(p)
 
+
 print(p)
+p.update()
 while terminal.peek() != terminal.TK_CLOSE:
     input = terminal.read()
     if(input == 30):

@@ -8,6 +8,7 @@ name = "pypi"
 "pep8" = "*"
 mypy = "*"
 bearlibterminal = "*"
+pycodestyle = "*"
 
 [dev-packages]
 pylint = "*"
