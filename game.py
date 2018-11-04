@@ -11,13 +11,22 @@ menu.addOption("First Option", p.water)
 menu.addOption("Second Option", p.water)
 menu.displayOptions(10, 10)
 
-print(p)
-menu.selectOption(0)
-print(p)
-menu.selectOption(1)
-print(p)
+# print(p)
+# menu.selectOption(0)
+# print(p)
+# menu.selectOption(1)
+# print(p)
 
-while terminal.read() != terminal.TK_CLOSE:
-    pass
+print(p)
+while terminal.peek() != terminal.TK_CLOSE:
+    input = terminal.read()
+    if(input == 30):
+        menu.selectOption(0)
+        print(p)
+    elif(input == 31):
+        menu.selectOption(1)
+        print(p)
+    elif(input == 224 or input == 41):
+        terminal.close()
 
 terminal.close()
