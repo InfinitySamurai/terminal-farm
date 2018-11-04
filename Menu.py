@@ -15,6 +15,6 @@ class Menu():
 
     def displayOptions(self, posx: int, posy: int):
         for index, option in enumerate(self.options):
-            optionText = "{}. {}".format(index, option["text"])
+            optionText = "{}. {}".format(index+1, option["text"])
             self.terminal.print(posx, posy+index, optionText)
         self.terminal.refresh()
