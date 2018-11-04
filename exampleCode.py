@@ -32,7 +32,6 @@ def wantsAString(thing: str):
 
 
 wantsAString("This is now actually a string")
-testFunction(p)
 
 while terminal.read() != terminal.TK_CLOSE:
     pass
