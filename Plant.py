@@ -6,7 +6,10 @@ class Plant():
         self.watered = False
 
     def water(self):
-        self.watered = True
+        if(self.watered):
+            print('This plant is already watered')
+        else:
+            self.watered = True
 
     def __str__(self):
         return "growth state: {}, watered: {}".format(

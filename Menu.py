@@ -18,3 +18,6 @@ class Menu():
             optionText = "{}. {}".format(index+1, option["text"])
             self.terminal.print(posx, posy+index, optionText)
         self.terminal.refresh()
+
+    def selectOption(self, index: int):
+        self.options[index]["callback"]()
