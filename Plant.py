@@ -30,10 +30,11 @@ class Plant():
         if (self.status == PlantStatus.ALIVE):
             if (self.watered):
                 self.watered = False
-                if(self.growthAmount < self.maxGrowth):
+                self.growthAmount += 1
+                if (self.status == PlantStatus.SUPER):
                     self.growthAmount += 1
-                    if (self.status == PlantStatus.SUPER):
-                        self.growthAmount += 1
+                if(self.growthAmount > self.maxGrowth):
+                    self.growthAmount = self.maxGrowth
             else:
                 self.status = PlantStatus.DYING
         elif (self.status == PlantStatus.DYING):
