@@ -2,16 +2,14 @@ from Plant import Plant
 from Menu import Menu
 from PlotContainer import PlotContainer
 from bearlibterminal import terminal
+from typing import List, Any
 
-# gameObjects = []
-# p: Plant = Plant("Apple Tree", 10, "@")
-# gameObjects.append(p)
+gameObjects: List[Any] = []
 
 
-# def updateAllGameObjects():
-#     for object in gameObjects:
-#         object.update()
-#         object.display(terminal, 30, 30)
+def updateAllGameObjects():
+    for object in gameObjects:
+        object.update()
 
 
 terminal.open()
@@ -26,6 +24,8 @@ terminal.open()
 # p.display(terminal, 31, 30)
 
 pc = PlotContainer(5, 5, 10, 5)
+pc.addObject(Plant("Apple", 10, '@'), 3, 4)
+pc.addObject(Plant("Cherry", 10, 'P'), 7, 2)
 pc.display(terminal)
 
 while terminal.peek() != terminal.TK_CLOSE:
