@@ -3,11 +3,13 @@ from enum import Enum
 
 
 class symbols(Enum):
+    UNTILLED = 203
     TILLED = 160
     WATERED = 161
 
 
 class colors(Enum):
+    UNTILLED = "CC9260"
     TILLED = "A6652D"
     WATERED = "39A2CC"
 
@@ -29,3 +31,7 @@ class Plot():
         watered: {}
         """.format(self.object, self.tilled, self.color, self.watered)
         return plotState
+
+    def display(self, terminal, x, y):
+        print("displaying at {}, {}".format(x, y))
+        terminal.put(x, y, "e")
