@@ -1,5 +1,5 @@
 from Plot import Plot
-from typing import List, Any, Union
+from typing import List, Union, Any
 
 
 class PlotContainer():
@@ -14,6 +14,8 @@ class PlotContainer():
         self.topLeftPlot: Plot = self.createPlots(self.width, self.height)
 
     def createPlots(self, width, height) -> Plot:
+        if(width <= 0 or height <= 0):
+            raise Exception("Plot Container can not have a width or height of less than 0")
         firstPlot: Union[Plot, None] = None
         previousPlotRow: List[Plot] = []
         for i in range(height):
@@ -34,22 +36,32 @@ class PlotContainer():
             previousPlotRow = currentPlotRow
         return firstPlot
 
-    # def addObject(self, o: Any, x: int, y: int):
-    #     if (x > self.maxX):
-    #         raise Exception("PlotContainer x: {} too large for maxX: {}".format(x, self.maxX))
-    #     if (y > self.maxY):
-    #         raise Exception("PlotContainer y: {} too large for maxY: {}".format(y, self.maxY))
+    def addObject(self, o: Any, x: int, y: int):
+        if (x > self.width):
+            raise Exception("PlotContainer x: {} too large for width: {}".format(x, self.width))
+        if (y > self.height):
+            raise Exception("PlotContainer y: {} too large for height: {}".format(y, self.height))
+        plot = self.getPlot(x, y)
+        plot.object = o
 
     def display(self, terminal):
         self.displayRow(terminal, self.topLeftPlot, self.x, self.y)
         terminal.refresh()
 
-    def displayRow(self, terminal, firstPlot, x, y):
+    def displayRow(self, terminal, firstPlot: Plot, x: int, y: int):
         self.displayPlot(terminal, firstPlot, x, y)
         if(firstPlot.downPlot):
             self.displayRow(terminal, firstPlot.downPlot, x, y + 1)
 
-    def displayPlot(self, terminal, plot, x, y):
+    def displayPlot(self, terminal: Any, plot: Plot, x: int, y: int):
         plot.display(terminal, x, y)
         if(plot.rightPlot):
             self.displayPlot(terminal, plot.rightPlot, x + 1, y)
+
+    def getPlot(self, x: int, y: int) -> Plot:
+        selectedPlot = self.topLeftPlot
+        for i in range(x):
+            selectedPlot = selectedPlot.rightPlot
+        for j in range(y):
+            selectedPlot = selectedPlot.downPlot
+        return selectedPlot
