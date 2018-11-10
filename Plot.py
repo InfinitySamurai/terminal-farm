@@ -34,6 +34,7 @@ class Plot():
         return plotState
 
     def display(self, terminal, x, y):
+        terminal.layer(5)
         symbol = symbols.UNTILLED
         color = colors.UNTILLED
         if self.tilled:
@@ -44,3 +45,6 @@ class Plot():
             color = colors.WATERED
         terminal.color(terminal.color_from_name(color.value))
         terminal.put(x, y, symbol.value)
+
+        if(self.object):
+            self.object.display(terminal, x, y)
