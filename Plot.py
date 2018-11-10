@@ -1,11 +1,21 @@
 from typing import Any
+from enum import Enum
+
+
+class symbols(Enum):
+    TILLED = 160
+    WATERED = 161
+
+
+class colors(Enum):
+    TILLED = "A6652D"
+    WATERED = "39A2CC"
 
 
 class Plot():
     def __init__(self):
         self.object: Any = None
         self.tilled: bool = False
-        self.color: str = "#ffffff"
         self.watered: bool = False
         self.upPlot: Plot = None
         self.rightPlot: Plot = None
