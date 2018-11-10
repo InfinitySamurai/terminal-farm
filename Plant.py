@@ -52,6 +52,7 @@ class Plant():
                 self.status = PlantStatus.DEAD
 
     def display(self, terminal, x: int, y: int):
+        terminal.layer(10)
         terminal.color(plantColor[self.status])
         terminal.put(x, y, self.symbol)
         terminal.refresh()
