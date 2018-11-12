@@ -20,17 +20,12 @@ class Plot():
         self.object: Any = None
         self.tilled: bool = bool(getrandbits(1))
         self.watered: bool = bool(getrandbits(1))
-        self.upPlot: Plot = None
-        self.rightPlot: Plot = None
-        self.downPlot: Plot = None
-        self.leftPlot: Plot = None
 
     def __str__(self):
         plotState = """object: {}
         tilled: {}
-        color: {}
         watered: {}
-        """.format(self.object, self.tilled, self.color, self.watered)
+        """.format(self.object, self.tilled, self.watered)
         return plotState
 
     def display(self, terminal, x, y):

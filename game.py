@@ -23,8 +23,9 @@ terminal.open()
 # p.update()
 # p.display(terminal, 31, 30)
 
-pc = PlotContainer(5, 5, 10, 5)
-pc.addObject(Plant("Apple", 10, '@'), 3, 4)
+pc = PlotContainer(5, 5, 50, 30)
+p = Plant("Apple", 10, '@')
+pc.addObject(p, 3, 4)
 pc.addObject(Plant("Cherry", 10, 'P'), 7, 2)
 pc.display(terminal)
 
