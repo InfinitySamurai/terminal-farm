@@ -1,4 +1,5 @@
 from Plant import Plant
+from Player import Player
 from Menu import Menu
 from PlotContainer import PlotContainer
 from bearlibterminal import terminal
@@ -28,9 +29,13 @@ p = Plant("Apple", 10, '@')
 pc.addObject(p, 3, 4)
 pc.addObject(Plant("Cherry", 10, 'P'), 7, 2)
 pc.display(terminal)
+player = Player(5, 5)
+player.display(pc.x, pc.y, terminal)
+
 
 while terminal.peek() != terminal.TK_CLOSE:
     userInput = terminal.read()
+    player.handleKeyPress(userInput, pc.x, pc.y, terminal)
     if(userInput == 30):
         # menu.selectOption(0)
         print("nothing")
